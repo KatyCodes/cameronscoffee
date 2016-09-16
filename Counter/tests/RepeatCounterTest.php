@@ -8,7 +8,7 @@
     {
       //arrange
       $test_RepeatCounter = new RepeatCounter;
-      $first_input = "hello";
+      $first_input = "Hello";
       $second_input = "hello";
 
       //act
