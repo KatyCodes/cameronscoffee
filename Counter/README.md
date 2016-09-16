@@ -15,6 +15,19 @@ The program takes the user input of a word and a sentence and returns how many t
 * link to a localhost8000
 * launch in web browser
 
+## Specifications  
+* The program should identify if two words are the same
+  * Input: "hello" and "hello"
+  * Output: True
+
+* The program should identify if two words are the same regardless to case
+  * Input: "heLlo" and "Hello"
+  * Output: True
+  
+* The program should take a word and a sentence and return how many times that word appears in the sentence.
+  * Input: "Word" and "This is a sentence with more than one word."
+  * Output: 1
+
 ## Known Bugs
 
 None.
