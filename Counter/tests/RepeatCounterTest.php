@@ -1,0 +1,21 @@
+<?php
+  require_once "src/RepeatCounter.php";
+
+  class RepeatCounterTest extends PHPUnit_Framework_TestCase
+  {
+
+    function test_wordequality()
+    {
+      //arrange
+      $test_RepeatCounter = new RepeatCounter;
+      $first_input = "hello";
+      $second_input = "hello";
+
+      //act
+      $result = $test_RepeatCounter->CountRepeats($first_input, $second_input);
+
+      $this->assertEquals(true, $result);
+    }
+  }
+
+ ?>
