@@ -9,12 +9,12 @@
       //arrange
       $test_RepeatCounter = new RepeatCounter;
       $first_input = "Hello";
-      $second_input = "hello";
+      $second_input = "hello world";
 
       //act
       $result = $test_RepeatCounter->CountRepeats($first_input, $second_input);
 
-      $this->assertEquals(true, $result);
+      $this->assertEquals(["hello"], $result);
     }
   }
 
