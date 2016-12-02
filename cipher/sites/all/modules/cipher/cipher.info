@@ -1,0 +1,5 @@
+name = Cipher
+description = Encrypts user input using Shift Cipher.
+package = My Modules
+core = 7.x
+files[] = cipher.module

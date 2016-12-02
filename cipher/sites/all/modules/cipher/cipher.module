@@ -1,0 +1,67 @@
+<?php
+
+function cipher_menu() {
+    $items['cipher'] = array(
+        'title' => 'Cipher Me!',
+        'page callback' => 'drupal_get_form',
+        'page arguments' => array('cipher_form'),
+        'access callback' => TRUE,
+        'type' => MENU_NORMAL_ITEM,
+    );
+        $items['cipher_success_page'] = array(
+        'title' => 'Success',
+        'page callback' => 'cipher_success',
+        'access callback' => TRUE,
+        'type' => MENU_CALLBACK,
+    );
+    return $items;
+}
+
+function cipher_form() {
+    $form['phrase'] = array(
+        '#title' => 'Words to cipher',
+        '#type' => 'textfield',
+        '#description' => t(''),
+    );
+
+    $form['shift_value'] = array(
+        '#title' => 'How many spots would you like this to be shifted?',
+        '#type' => 'textfield',
+        '#description' => t(''),
+    );
+
+    $form['shift_direction'] = array(
+        '#title' => 'Which direction would you like your phrase to be shifted? Left or Right?',
+        '#type' => 'textfield',
+        '#description' => t(''),
+    );
+
+    $form['submit'] = array(
+        '#type' => 'submit',
+        '#value' => 'Go',
+    );
+
+    return $form;
+}
+
+function cipher_form_submit($form, &$form_state) {
+
+    $phrase = $form_state['values']['phrase'];
+    $shift_value = $form_state['values']['shift_value'];
+    $shift_direction = $form_state['values']['shift_direction'];
+
+    $split_array = str_split($phrase);
+    $answer = array();
+    $alphabet = array('a'=>1, 'b'=>2, 'c'=>3, 'd'=>4, 'e'=>5, 'f'=>6,'g'=>7,'h'=>8,'i'=>9, 'j'=>10,'k'=>11,'l'=>12,'m'=>13,'n'=>14,'o'=>15,'p'=>16,'q'=>17,'r'=>18,'s'=>19,'t'=>20,'u'=>21,'v'=>22,'w'=>23,'x'=>24,'y'=>25,'z'=>26,
+    );
+
+    foreach ($split_array as $letter) {
+        if (array_key_exists($letter, $alphabet)) {
+            array_push($answer, $letter[$i]);
+        }
+    }
+    echo '<pre>';
+    var_dump($answer);
+    echo '</pre>';
+    exit;
+}
